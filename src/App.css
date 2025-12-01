@@ -1,0 +1,99 @@
+/* =======================================
+   PROFESSIONAL E-COMMERCE STYLES
+   ======================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Mixed Color Palette - Main Theme */
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-light: #818cf8;
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
+  
+  /* Navbar Colors - Green/Teal */
+  --nav-color: #10b981;
+  --nav-dark: #059669;
+  --nav-light: #34d399;
+  --nav-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  
+  /* Slider Colors - Light Dark/Black Theme */
+  --slider-color: #1f2937;
+  --slider-dark: #111827;
+  --slider-light: #374151;
+  --slider-gradient: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%);
+  
+  /* Accent Colors */
+  --accent-color: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-orange: #f59e0b;
+  --accent-yellow: #fbbf24;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  
+  /* Text Colors */
+  --text-color: #374151;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --text-lighter: #9ca3af;
+  
+  /* Background Colors */
+  --bg-color: #ffffff;
+  --bg-light: #f9fafb;
+  --bg-section: #f3f4f6;
+  --bg-hover: #e5e7eb;
+  
+  /* Border Colors */
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  --border-dark: #d1d5db;
+  
+  /* Base Colors */
+  --white: #ffffff;
+  
+  /* Shadows - Professional & Subtle */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.18);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =======================================
+   COMPONENT STYLES MOVED TO:
+   - components/Header.css
+   - components/Slider.css
+   - components/ProductCard.css
+   - components/FeaturedCategories.css
+   - components/Footer.css
+   - pages/Home.css
+   - pages/Cart.css
+   - pages/Checkout.css
+   - pages/ProductDetails.css
+   ======================================= */
