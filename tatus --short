@@ -1,0 +1,192 @@
+[1mdiff --git a/src/data/groceryData.js b/src/data/groceryData.js[m
+[1mindex 9401c53..df80f6a 100644[m
+[1m--- a/src/data/groceryData.js[m
+[1m+++ b/src/data/groceryData.js[m
+[36m@@ -4,9 +4,9 @@[m [mexport const groceryProducts = [[m
+     id: 1,[m
+     name: "Fresh Apples",[m
+     category: "Fruits",[m
+[31m-    price: 2555945,[m
+[32m+[m[32m    price: 2.99,[m
+     originalPrice: 3.49,[m
+[31m-    image: "https://via..com/300x200?text=Fresh+Apples",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Crisp and juicy red apples, perfect for snacking",[m
+     inStock: true,[m
+     rating: 4.5,[m
+[36m@@ -18,7 +18,7 @@[m [mexport const groceryProducts = [[m
+     category: "Fruits",[m
+     price: 1.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Organic+Bananas",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Sweet organic bananas, rich in potassium",[m
+     inStock: true,[m
+     rating: 4.7,[m
+[36m@@ -30,7 +30,7 @@[m [mexport const groceryProducts = [[m
+     category: "Fruits",[m
+     price: 3.49,[m
+     originalPrice: 3.99,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Fresh+Oranges",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Juicy oranges packed with vitamin C",[m
+     inStock: true,[m
+     rating: 4.6,[m
+[36m@@ -42,7 +42,7 @@[m [mexport const groceryProducts = [[m
+     category: "Fruits",[m
+     price: 4.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Strawberries",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Sweet and fresh strawberries, locally sourced",[m
+     inStock: true,[m
+     rating: 4.8,[m
+[36m@@ -54,7 +54,7 @@[m [mexport const groceryProducts = [[m
+     category: "Fruits",[m
+     price: 5.99,[m
+     originalPrice: 6.49,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Grapes",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Seedless red grapes, perfect for snacking",[m
+     inStock: true,[m
+     rating: 4.4,[m
+[36m@@ -66,7 +66,7 @@[m [mexport const groceryProducts = [[m
+     category: "Fruits",[m
+     price: 6.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Watermelon",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Sweet and refreshing watermelon, great for summer",[m
+     inStock: true,[m
+     rating: 4.9,[m
+[36m@@ -80,7 +80,7 @@[m [mexport const groceryProducts = [[m
+     category: "Vegetables",[m
+     price: 1.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Carrots",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Crunchy organic carrots, rich in beta-carotene",[m
+     inStock: true,[m
+     rating: 4.5,[m
+[36m@@ -92,7 +92,7 @@[m [mexport const groceryProducts = [[m
+     category: "Vegetables",[m
+     price: 2.49,[m
+     originalPrice: 2.99,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Broccoli",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Fresh broccoli florets, high in fiber and vitamins",[m
+     inStock: true,[m
+     rating: 4.3,[m
+[36m@@ -104,7 +104,7 @@[m [mexport const groceryProducts = [[m
+     category: "Vegetables",[m
+     price: 2.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Tomatoes",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Ripe red tomatoes, perfect for salads and cooking",[m
+     inStock: true,[m
+     rating: 4.6,[m
+[36m@@ -116,7 +116,7 @@[m [mexport const groceryProducts = [[m
+     category: "Vegetables",[m
+     price: 2.29,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Spinach",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Fresh leafy spinach, packed with iron",[m
+     inStock: true,[m
+     rating: 4.4,[m
+[36m@@ -128,7 +128,7 @@[m [mexport const groceryProducts = [[m
+     category: "Vegetables",[m
+     price: 3.99,[m
+     originalPrice: 4.49,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Bell+Peppers",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Colorful bell peppers, great for stir-fries",[m
+     inStock: true,[m
+     rating: 4.5,[m
+[36m@@ -140,7 +140,7 @@[m [mexport const groceryProducts = [[m
+     category: "Vegetables",[m
+     price: 1.49,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Cucumber",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Crisp and refreshing cucumbers",[m
+     inStock: true,[m
+     rating: 4.2,[m
+[36m@@ -154,7 +154,7 @@[m [mexport const groceryProducts = [[m
+     category: "Dairy",[m
+     price: 3.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Whole+Milk",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Fresh whole milk, 1 gallon",[m
+     inStock: true,[m
+     rating: 4.7,[m
+[36m@@ -166,7 +166,7 @@[m [mexport const groceryProducts = [[m
+     category: "Dairy",[m
+     price: 4.99,[m
+     originalPrice: 5.49,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Greek+Yogurt",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Creamy Greek yogurt, high in protein",[m
+     inStock: true,[m
+     rating: 4.8,[m
+[36m@@ -178,7 +178,7 @@[m [mexport const groceryProducts = [[m
+     category: "Dairy",[m
+     price: 5.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Cheddar+Cheese",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Sharp cheddar cheese, 8 oz block",[m
+     inStock: true,[m
+     rating: 4.6,[m
+[36m@@ -190,7 +190,7 @@[m [mexport const groceryProducts = [[m
+     category: "Dairy",[m
+     price: 4.49,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Butter",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Premium butter, 1 lb",[m
+     inStock: true,[m
+     rating: 4.5,[m
+[36m@@ -202,7 +202,7 @@[m [mexport const groceryProducts = [[m
+     category: "Dairy",[m
+     price: 3.49,[m
+     originalPrice: 3.99,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Eggs",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Farm-fresh eggs, 12 count",[m
+     inStock: true,[m
+     rating: 4.9,[m
+[36m@@ -216,7 +216,7 @@[m [mexport const groceryProducts = [[m
+     category: "Bakery",[m
+     price: 2.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Whole+Wheat+Bread",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Fresh whole wheat bread, sliced",[m
+     inStock: true,[m
+     rating: 4.4,[m
+[36m@@ -228,7 +228,7 @@[m [mexport const groceryProducts = [[m
+     category: "Bakery",[m
+     price: 4.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Croissants",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Buttery French croissants, 4 pack",[m
+     inStock: true,[m
+     rating: 4.7,[m
+[36m@@ -240,7 +240,7 @@[m [mexport const groceryProducts = [[m
+     category: "Bakery",[m
+     price: 3.99,[m
+     originalPrice: 4.49,[m
+[31m-    image: "https://via.placeholder.com/300x200?text=Bagels",[m
+[32m+[m[32m    image: "https://picsum.photos/300/200",[m
+     description: "Fresh bagels, 6 pack, assorted flavors",[m
+     inStock: true,[m
+     rating: 4.5,[m
+[36m@@ -254,7 +254,7 @@[m [mexport const groceryProducts = [[m
+     category: "Meat & Seafood",[m
+     price: 7.99,[m
+     originalPrice: null,[m
+[31m-    image: "https://via.
