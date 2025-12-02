@@ -14,9 +14,44 @@
 }
 
 .header-top {
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.25rem 0;
-  background: var(--white);
+  background: #08123B;
+}
+
+.header-top .header-action-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.header-top .header-action-item:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-top .support-number {
+  color: var(--white);
+}
+
+.header-top .support-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-top .logo {
+  background: transparent;
+  border: none;
+}
+
+.header-top .logo:hover {
+  background: transparent;
+  border: none;
+}
+
+.header-top .logo-main {
+  color: var(--white);
+}
+
+.header-top .logo-sub {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .header-top-content {
@@ -33,20 +68,37 @@
   gap: 14px;
   text-decoration: none;
   color: var(--text-color);
-  min-width: 260px;
+  min-width: 200px;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0.75rem 1.25rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(129, 140, 248, 0.08) 100%);
-  border: 1.5px solid rgba(99, 102, 241, 0.2);
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .logo:hover {
   transform: translateX(2px);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(129, 140, 248, 0.12) 100%);
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  background: transparent;
+  box-shadow: none;
+}
+
+.logo-image {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.logo:hover .logo-image {
+  transform: scale(1.05);
+}
+
+.logo-text-fallback {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .logo-icon {
@@ -220,6 +272,10 @@
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
   border: 2px solid var(--white);
+}
+
+.header-top .action-badge {
+  border: 2px solid #08123B;
 }
 
 /* Sign In Button - Professional Purple Design */

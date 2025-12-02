@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { groceryProducts } from '../data/groceryData';
+import { useWishlist } from '../context/WishlistContext';
 import './Slider.css';
 
 const Slider = () => {
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -154,13 +156,18 @@ const Slider = () => {
                     <span>Shop Now</span>
                   </Link>
                   <button 
-                    className="slide-btn secondary" 
+                    className={`slide-btn secondary ${isInWishlist(product.id) ? 'active' : ''}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      // Add to wishlist functionality can be added here
+                      e.stopPropagation();
+                      if (isInWishlist(product.id)) {
+                        removeFromWishlist(product.id);
+                      } else {
+                        addToWishlist(product);
+                      }
                     }}
                   >
-                    <span>❤️ Wishlist</span>
+                    <span>{isInWishlist(product.id) ? '❤️ In Wishlist' : '🤍 Add to Wishlist'}</span>
                   </button>
                 </div>
               </div>

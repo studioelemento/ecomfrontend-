@@ -238,6 +238,42 @@
   cursor: not-allowed;
 }
 
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.wishlist-btn-large {
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wishlist-btn-large:hover {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+  background: rgba(239, 68, 68, 0.05);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.wishlist-btn-large.active {
+  border-color: var(--danger-color);
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger-color);
+}
+
 .not-found {
   text-align: center;
   padding: 4rem 2rem;

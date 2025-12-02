@@ -1,13 +1,26 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = (e) => {
     e.preventDefault();
     addToCart(product);
+  };
+
+  const handleWishlistToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (inWishlist) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   const renderStars = (rating) => {
@@ -44,6 +57,13 @@ const ProductCard = ({ product }) => {
               {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
             </span>
           )}
+          <button 
+            className={`wishlist-btn ${inWishlist ? 'active' : ''}`}
+            onClick={handleWishlistToggle}
+            aria-label={inWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+          >
+            {inWishlist ? '❤️' : '🤍'}
+          </button>
         </div>
         <div className="product-info">
           <p className="product-category">{product.category}</p>

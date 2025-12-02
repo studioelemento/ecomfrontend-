@@ -1,12 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import { categories } from '../data/groceryData';
 import './Header.css';
+// Import your logo image - replace this path with your actual logo file location
+// Option 1: If logo is in public folder, use: const logoImage = '/logo.png';
+// Option 2: If logo is in src/assets, use: import logoImage from '../assets/images/logo.png';
+const logoImage = '/logo.png'; // Change this path to match your logo file location
 
 const Header = () => {
   const { getCartItemsCount } = useCart();
+  const { getWishlistCount } = useWishlist();
   const cartCount = getCartItemsCount();
+  const wishlistCount = getWishlistCount();
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -63,14 +70,25 @@ const Header = () => {
         <div className="container">
           <div className="header-top-content">
             <Link to="/" className="logo">
-              <span className="logo-icon">🛒</span>
-              <div className="logo-text">
+              <img 
+                src={logoImage} 
+                alt="CARTNET Logo" 
+                className="logo-image"
+                onError={(e) => {
+                  // Fallback if image doesn't exist
+                  e.target.style.display = 'none';
+                  if (e.target.nextSibling) {
+                    e.target.nextSibling.style.display = 'flex';
+                  }
+                }}
+              />
+              <div className="logo-text-fallback" style={{ display: 'none' }}>
                 <span className="logo-main">CARTNET</span>
                 <span className="logo-sub">Online Shopping</span>
               </div>
             </Link>
             
-            <form className="header-search" onSubmit={handleSearch}>
+            {/* <form className="header-search" onSubmit={handleSearch}>
               <input 
                 type="text" 
                 placeholder="Search for items..." 
@@ -79,19 +97,15 @@ const Header = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               <button type="submit" className="search-btn">🔍</button>
-            </form>
+            </form> */}
 
             <div className="header-right">
               <div className="header-actions">
-                <div className="header-action-item">
-                  <span className="action-icon">📍</span>
-                  <span className="action-text">All</span>
-                </div>
-                <div className="header-action-item">
+                <Link to="/wishlist" className="header-action-item">
                   <span className="action-icon">❤️</span>
                   <span className="action-text">Wishlist</span>
-                  <span className="action-badge">0</span>
-                </div>
+                  {wishlistCount > 0 && <span className="action-badge">{wishlistCount}</span>}
+                </Link>
                 <Link to="/cart" className="header-action-item cart-link">
                   <span className="action-icon">🛒</span>
                   <span className="action-text">Cart</span>
@@ -115,15 +129,6 @@ const Header = () => {
       <div className="header-nav">
         <div className="container">
           <div className="categories-dropdown-wrapper" ref={dropdownRef}>
-            <button 
-              className="browse-categories-btn"
-              onClick={() => setShowCategoriesDropdown(!showCategoriesDropdown)}
-              onMouseEnter={() => setShowCategoriesDropdown(true)}
-            >
-              <span className="grid-icon">☰</span>
-              Browse All Categories
-              <span className={`dropdown-icon ${showCategoriesDropdown ? 'open' : ''}`}>▼</span>
-            </button>
             {showCategoriesDropdown && (
               <div 
                 className="categories-dropdown"

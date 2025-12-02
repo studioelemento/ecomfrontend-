@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { groceryProducts } from '../data/groceryData';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import { useState } from 'react';
 import './ProductDetails.css';
 
@@ -8,6 +9,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const [quantity, setQuantity] = useState(1);
 
   const product = groceryProducts.find((p) => p.id === parseInt(id));
@@ -29,6 +31,16 @@ const ProductDetails = () => {
     }
     navigate('/cart');
   };
+
+  const handleWishlistToggle = () => {
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
+  };
+
+  const inWishlist = isInWishlist(product.id);
 
   return (
     <div className="product-details-page">
@@ -79,13 +91,22 @@ const ProductDetails = () => {
                 <button onClick={() => setQuantity(quantity + 1)}>+</button>
               </div>
             </div>
-            <button
-              className="add-to-cart-btn-large"
-              onClick={handleAddToCart}
-              disabled={!product.inStock}
-            >
-              Add to Cart
-            </button>
+            <div className="product-actions">
+              <button
+                className="add-to-cart-btn-large"
+                onClick={handleAddToCart}
+                disabled={!product.inStock}
+              >
+                Add to Cart
+              </button>
+              <button
+                className={`wishlist-btn-large ${inWishlist ? 'active' : ''}`}
+                onClick={handleWishlistToggle}
+                aria-label={inWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+              >
+                {inWishlist ? '❤️ In Wishlist' : '🤍 Add to Wishlist'}
+              </button>
+            </div>
           </div>
         </div>
       </div>

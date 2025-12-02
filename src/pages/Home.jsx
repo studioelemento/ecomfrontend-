@@ -39,7 +39,7 @@ const Home = () => {
         <Slider />
       </section>
 
-      <FeaturedCategories />
+   
 
       <section className="products-section">
         <div className="container">
