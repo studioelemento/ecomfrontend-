@@ -288,21 +288,9 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .cart-content {
     grid-template-columns: 1fr;
-  }
-
-  .cart-item {
-    grid-template-columns: 80px 1fr;
-    gap: 1rem;
-  }
-
-  .cart-item-quantity,
-  .cart-item-total,
-  .remove-btn {
-    grid-column: 2;
-    margin-top: 0.5rem;
   }
 
   .cart-summary {
@@ -310,3 +298,246 @@
   }
 }
 
+@media (max-width: 768px) {
+  .cart-page {
+    padding: 1rem 0;
+    background: #f8f9fa;
+  }
+
+  .cart-page h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .cart-items {
+    padding: 0.5rem;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    position: relative;
+  }
+
+  .cart-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Cart Item Layout - Mobile Card Style */
+  .cart-item-image {
+    grid-row: auto;
+    text-align: left;
+    margin-bottom: 0.75rem;
+    background: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-item-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item-image .product-emoji {
+    font-size: 3rem;
+  }
+
+  .cart-item-info {
+    margin-bottom: 0.75rem;
+  }
+
+  .cart-item-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .cart-item-category {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-item-price {
+    font-size: 1.15rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Quantity and Price Row */
+  .cart-item-quantity {
+    margin: 0.75rem 0;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .cart-item-quantity button {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .cart-item-quantity span {
+    min-width: 40px;
+    font-size: 1rem;
+  }
+
+  .cart-item-total {
+    font-size: 1.3rem;
+    margin: 0.75rem 0;
+    color: #10b981;
+  }
+
+  /* Remove Button - Top Right */
+  .remove-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+  }
+
+  /* Clear Cart Button */
+  .clear-cart-btn {
+    margin: 0 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Cart Summary */
+  .cart-summary {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 12px;
+  }
+
+  .cart-summary h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .summary-row {
+    padding: 0.65rem 0;
+    font-size: 0.95rem;
+  }
+
+  .summary-row.total {
+    font-size: 1.15rem;
+    padding-top: 0.75rem;
+  }
+
+  .checkout-btn {
+    padding: 0.95rem;
+    font-size: 1rem;
+  }
+
+  .continue-shopping-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+
+  .cart-page {
+    background: white;
+  }
+
+  .cart-page h1 {
+    font-size: 1.25rem;
+    padding: 0 0.75rem;
+  }
+
+  .cart-items {
+    padding: 0.25rem;
+  }
+
+  .cart-item {
+    padding: 0.875rem;
+    margin-bottom: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .cart-item-image {
+    padding: 0.5rem;
+  }
+
+  .cart-item-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cart-item-info h3 {
+    font-size: 1rem;
+  }
+
+  .cart-item-price {
+    font-size: 1.05rem;
+  }
+
+  .cart-item-quantity button {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .cart-item-total {
+    font-size: 1.2rem;
+  }
+
+  .remove-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .clear-cart-btn {
+    margin: 0 0.25rem 0.75rem;
+  }
+
+  .cart-summary {
+    padding: 1.25rem;
+    margin: 0 0.25rem;
+  }
+
+  .cart-summary h2 {
+    font-size: 1.2rem;
+  }
+
+  .summary-row {
+    font-size: 0.9rem;
+  }
+
+  .summary-row.total {
+    font-size: 1.1rem;
+  }
+
+  .checkout-btn,
+  .continue-shopping-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .empty-cart {
+    padding: 2rem 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .shop-btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

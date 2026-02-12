@@ -1,9 +1,8 @@
+@import "tailwindcss";
+
 /* =======================================
    GLOBAL FONT (ROBOTO)
    ======================================= */
-
-/* Import Roboto font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 /* Apply Roboto everywhere */
 * {
@@ -27,19 +26,19 @@ html {
   --primary-dark: #4f46e5;
   --primary-light: #818cf8;
   --primary-gradient: linear-gradient(135deg, #6366f1 0%, #818cf8 100%);
-  
+
   /* Navbar Colors - Green/Teal */
   --nav-color: #10b981;
   --nav-dark: #059669;
   --nav-light: #34d399;
   --nav-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-  
+
   /* Slider Colors - Light Dark/Black Theme */
   --slider-color: #1f2937;
   --slider-dark: #111827;
   --slider-light: #374151;
   --slider-gradient: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%);
-  
+
   /* Accent Colors */
   --accent-color: #6366f1;
   --accent-hover: #4f46e5;
@@ -48,27 +47,27 @@ html {
   --success-color: #10b981;
   --danger-color: #ef4444;
   --danger-hover: #dc2626;
-  
+
   /* Text Colors */
   --text-color: #374151;
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --text-lighter: #9ca3af;
-  
+
   /* Background Colors */
   --bg-color: #ffffff;
   --bg-light: #f9fafb;
   --bg-section: #f3f4f6;
   --bg-hover: #e5e7eb;
-  
+
   /* Border Colors */
   --border-color: #e5e7eb;
   --border-light: #f3f4f6;
   --border-dark: #d1d5db;
-  
+
   /* Base Colors */
   --white: #ffffff;
-  
+
   /* Shadows - Professional & Subtle */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
