@@ -3,7 +3,11 @@ import { Link, useNavigate, useLocation, useSearchParams } from 'react-router-do
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { categories } from '../data/groceryData';
+import CartDropdown from './CartDropdown';
+import MobileMenu from './MobileMenu';
+import LoginModal from './LoginModal';
 import './Header.css';
+import StoreSelector from './StoreSelector';
 // Import your logo image - replace this path with your actual logo file location
 // Option 1: If logo is in public folder, use: const logoImage = '/logo.png';
 // Option 2: If logo is in src/assets, use: import logoImage from '../assets/images/logo.png';
@@ -19,8 +23,11 @@ const Header = () => {
   const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [showCategoriesDropdown, setShowCategoriesDropdown] = useState(false);
+  const [isCartDropdownOpen, setIsCartDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const dropdownRef = useRef(null);
-  
+
   // Get current category from URL
   const currentCategory = searchParams.get('category') || 'All';
 
@@ -70,9 +77,9 @@ const Header = () => {
         <div className="container">
           <div className="header-top-content">
             <Link to="/" className="logo">
-              <img 
-                src={logoImage} 
-                alt="CARTNET Logo" 
+              <img
+                src={logoImage}
+                alt="CARTNET Logo"
                 className="logo-image"
                 onError={(e) => {
                   // Fallback if image doesn't exist
@@ -87,7 +94,11 @@ const Header = () => {
                 <span className="logo-sub">Online Shopping</span>
               </div>
             </Link>
-            
+
+            {/* Store Selector */}
+            <StoreSelector />
+
+
             {/* <form className="header-search" onSubmit={handleSearch}>
               <input 
                 type="text" 
@@ -106,15 +117,23 @@ const Header = () => {
                   <span className="action-text">Wishlist</span>
                   {wishlistCount > 0 && <span className="action-badge">{wishlistCount}</span>}
                 </Link>
-                <Link to="/cart" className="header-action-item cart-link">
+                <button
+                  className="header-action-item cart-link"
+                  onClick={() => setIsCartDropdownOpen(true)}
+                >
                   <span className="action-icon">🛒</span>
                   <span className="action-text">Cart</span>
                   {cartCount > 0 && <span className="action-badge">{cartCount}</span>}
-                </Link>
-                <button className="sign-in-btn">Sign In</button>
+                </button>
+                <button
+                  className="sign-in-btn"
+                  onClick={() => setIsLoginModalOpen(true)}
+                >
+                  Sign In
+                </button>
               </div>
-              
-              <div className="support-info">
+
+              <div className="support-info hidden md:flex">
                 <span className="support-icon">📞</span>
                 <div>
                   <div className="support-number">1900-888</div>
@@ -122,15 +141,23 @@ const Header = () => {
                 </div>
               </div>
             </div>
+
+            <button
+              className="header-action-item mobile-menu-btn"
+              aria-label="Menu"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <span className="action-icon">☰</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <div className="header-nav">
+      <div className="header-nav hidden md:block">
         <div className="container">
           <div className="categories-dropdown-wrapper" ref={dropdownRef}>
             {showCategoriesDropdown && (
-              <div 
+              <div
                 className="categories-dropdown"
                 onMouseLeave={() => setShowCategoriesDropdown(false)}
               >
@@ -153,7 +180,7 @@ const Header = () => {
             )}
           </div>
           <nav className="main-nav">
-            <button 
+            <button
               className={`nav-link ${currentCategory === 'All' ? 'active' : ''}`}
               onClick={() => {
                 navigate('/');
@@ -176,6 +203,24 @@ const Header = () => {
           </nav>
         </div>
       </div>
+
+      {/* Cart Dropdown */}
+      <CartDropdown
+        isOpen={isCartDropdownOpen}
+        onClose={() => setIsCartDropdownOpen(false)}
+      />
+
+      {/* Mobile Menu */}
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
     </header>
   );
 };
